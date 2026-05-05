@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hair Style Zone | Premium Salon</title>
+<meta name="description" content="Hair Style Zone - Modern salon experience with premium styling.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+  scroll-behavior: smooth;
+  background: black;
+  color: white;
+}
+
+/* SKY BLUE TEXT */
+.blue {
+  background: linear-gradient(90deg,#38bdf8,#0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* FADE */
+.fade { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+.fade.show { opacity: 1; transform: translateY(0); }
+
+/* FLOAT */
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* CARD */
+.card {
+  transition: all 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 0 30px rgba(56,189,248,0.4);
+  border-color: #38bdf8;
+}
+
+/* BUTTON */
+.btn {
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(56,189,248,0.5);
+}
+
+/* SECOND BUTTON */
+.btn-outline {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+.btn-outline:hover {
+  background: #38bdf8;
+  color: black;
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(56,189,248,0.5);
+}
+
+/* LINE */
+.line {
+  height: 2px;
+  width: 120px;
+  background: linear-gradient(to right,#38bdf8,transparent);
+  margin: 12px auto;
+}
+
+/* BUTTON GROUP */
+.btn-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="h-screen flex flex-col justify-center items-center text-center px-6 fade">
+
+  <h1 class="text-5xl md:text-7xl font-bold mb-4 float">
+    Hair Style <span class="blue">Zone</span>
+  </h1>
+
+  <div class="line"></div>
+
+  <p class="text-gray-400 max-w-xl mb-8">
+    Premium salon experience with modern styling, smooth design and easy booking.
+  </p>
+
+  <!-- BUTTONS -->
+  <div class="btn-group">
+
+    <!-- BOOK -->
+    <a href="#" class="bg-sky-400 text-black px-6 py-3 rounded-full btn">
+      Book Appointment
+    </a>
+
+    <!-- 🔥 WEBBER BUTTON -->
+    <a href="https://webber-we.vercel.app" target="_blank"
+    class="px-6 py-3 rounded-full btn btn-outline">
+      Visit Webber
+    </a>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="py-24 px-6 border-t border-gray-800 text-center fade">
+
+  <h2 class="text-4xl mb-2 blue">Our Services</h2>
+  <div class="line"></div>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10">
+
+    <div class="card border p-8 rounded-2xl">
+      <h3 class="text-xl mb-2">Haircut & Styling</h3>
+      <p class="text-gray-400 text-sm">Trendy modern styles</p>
+    </div>
+
+    <div class="card border p-8 rounded-2xl">
+      <h3 class="text-xl mb-2">Hair Spa</h3>
+      <p class="text-gray-400 text-sm">Smooth & shiny hair</p>
+    </div>
+
+    <div class="card border p-8 rounded-2xl">
+      <h3 class="text-xl mb-2">Beard Grooming</h3>
+      <p class="text-gray-400 text-sm">Sharp clean look</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRICING -->
+<section class="py-24 px-6 border-t border-gray-800 text-center fade">
+
+  <h2 class="text-4xl mb-2 blue">Pricing</h2>
+  <div class="line"></div>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10">
+
+    <div class="card border p-8 rounded-2xl">
+      <h3>Haircut</h3>
+      <p class="text-3xl mt-2 text-sky-400">₹199</p>
+    </div>
+
+    <div class="card border p-8 rounded-2xl">
+      <h3>Hair Spa</h3>
+      <p class="text-3xl mt-2 text-sky-400">₹499</p>
+    </div>
+
+    <div class="card border p-8 rounded-2xl">
+      <h3>Full Grooming</h3>
+      <p class="text-3xl mt-2 text-sky-400">₹799</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="py-24 text-center border-t border-gray-800 fade">
+
+  <h2 class="text-4xl mb-4">Ready for a Fresh Look?</h2>
+
+  <a href="#" class="bg-sky-400 text-black px-8 py-3 rounded-full btn">
+    Contact Now
+  </a>
+
+</section>
+
+<!-- SCRIPT -->
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
