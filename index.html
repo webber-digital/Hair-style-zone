@@ -4,59 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hair Style Zone | Premium Salon</title>
-<meta name="description" content="Hair Style Zone - Modern salon experience with premium styling.">
+<title>Hair Style Zone | Premium Salon Experience</title>
+<meta name="description" content="Hair Style Zone - Premium salon with modern styling, smooth experience and easy booking.">
 
 <script src="https://cdn.tailwindcss.com"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
-  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
   background: black;
   color: white;
+  scroll-behavior: smooth;
 }
 
-/* SKY BLUE TEXT */
+/* SKY BLUE GRADIENT */
 .blue {
   background: linear-gradient(90deg,#38bdf8,#0ea5e9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* GLASS NAV */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
 /* FADE */
-.fade { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+.fade { opacity: 0; transform: translateY(60px); transition: 1s; }
 .fade.show { opacity: 1; transform: translateY(0); }
 
 /* FLOAT */
-.float {
-  animation: float 4s ease-in-out infinite;
-}
+.float { animation: float 5s ease-in-out infinite; }
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 /* CARD */
 .card {
-  transition: all 0.4s ease;
+  transition: 0.4s;
 }
 .card:hover {
   transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 0 30px rgba(56,189,248,0.4);
+  box-shadow: 0 0 35px rgba(56,189,248,0.4);
   border-color: #38bdf8;
 }
 
 /* BUTTON */
 .btn {
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 .btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(56,189,248,0.5);
+  box-shadow: 0 0 30px rgba(56,189,248,0.6);
 }
 
-/* SECOND BUTTON */
+/* OUTLINE */
 .btn-outline {
   border: 1px solid #38bdf8;
   color: #38bdf8;
@@ -64,8 +71,6 @@ body {
 .btn-outline:hover {
   background: #38bdf8;
   color: black;
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(56,189,248,0.5);
 }
 
 /* LINE */
@@ -75,18 +80,24 @@ body {
   background: linear-gradient(to right,#38bdf8,transparent);
   margin: 12px auto;
 }
-
-/* BUTTON GROUP */
-.btn-group {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 </style>
 </head>
 
 <body>
+
+<!-- NAV -->
+<div class="fixed top-0 w-full flex justify-between items-center px-6 py-4 glass z-50">
+
+  <div class="text-lg tracking-widest font-semibold">
+    Hair Style <span class="blue">Zone</span>
+  </div>
+
+  <a href="https://webber-we.vercel.app" target="_blank"
+  class="px-4 py-2 rounded-full btn-outline text-sm">
+  Built by Webber
+  </a>
+
+</div>
 
 <!-- HERO -->
 <section class="h-screen flex flex-col justify-center items-center text-center px-6 fade">
@@ -98,23 +109,18 @@ body {
   <div class="line"></div>
 
   <p class="text-gray-400 max-w-xl mb-8">
-    Premium salon experience with modern styling, smooth design and easy booking.
+    Experience premium grooming with modern style, smooth ambience and expert care.
   </p>
 
-  <!-- BUTTONS -->
-  <div class="btn-group">
-
-    <!-- BOOK -->
+  <div class="flex gap-4 flex-wrap justify-center">
     <a href="#" class="bg-sky-400 text-black px-6 py-3 rounded-full btn">
       Book Appointment
     </a>
 
-    <!-- 🔥 WEBBER BUTTON -->
     <a href="https://webber-we.vercel.app" target="_blank"
     class="px-6 py-3 rounded-full btn btn-outline">
       Visit Webber
     </a>
-
   </div>
 
 </section>
@@ -122,26 +128,41 @@ body {
 <!-- SERVICES -->
 <section class="py-24 px-6 border-t border-gray-800 text-center fade">
 
-  <h2 class="text-4xl mb-2 blue">Our Services</h2>
+  <h2 class="text-4xl blue">Our Services</h2>
   <div class="line"></div>
 
-  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10">
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
 
     <div class="card border p-8 rounded-2xl">
       <h3 class="text-xl mb-2">Haircut & Styling</h3>
-      <p class="text-gray-400 text-sm">Trendy modern styles</p>
+      <p class="text-gray-400 text-sm">Modern & trending styles</p>
     </div>
 
     <div class="card border p-8 rounded-2xl">
       <h3 class="text-xl mb-2">Hair Spa</h3>
-      <p class="text-gray-400 text-sm">Smooth & shiny hair</p>
+      <p class="text-gray-400 text-sm">Smooth & healthy hair</p>
     </div>
 
     <div class="card border p-8 rounded-2xl">
       <h3 class="text-xl mb-2">Beard Grooming</h3>
-      <p class="text-gray-400 text-sm">Sharp clean look</p>
+      <p class="text-gray-400 text-sm">Sharp & clean look</p>
     </div>
 
+  </div>
+
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="py-24 px-6 border-t border-gray-800 text-center fade">
+
+  <h2 class="text-4xl blue">Why Choose Us</h2>
+  <div class="line"></div>
+
+  <div class="max-w-3xl mx-auto mt-10 text-gray-400 space-y-3">
+    <p>✔ Professional stylists</p>
+    <p>✔ Premium experience</p>
+    <p>✔ Affordable pricing</p>
+    <p>✔ Clean & modern environment</p>
   </div>
 
 </section>
@@ -149,10 +170,10 @@ body {
 <!-- PRICING -->
 <section class="py-24 px-6 border-t border-gray-800 text-center fade">
 
-  <h2 class="text-4xl mb-2 blue">Pricing</h2>
+  <h2 class="text-4xl blue">Pricing</h2>
   <div class="line"></div>
 
-  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10">
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
 
     <div class="card border p-8 rounded-2xl">
       <h3>Haircut</h3>
@@ -173,6 +194,19 @@ body {
 
 </section>
 
+<!-- TESTIMONIAL -->
+<section class="py-24 px-6 border-t border-gray-800 text-center fade">
+
+  <h2 class="text-4xl blue">Client Reviews</h2>
+  <div class="line"></div>
+
+  <div class="max-w-3xl mx-auto mt-10 text-gray-400">
+    <p>“Best salon experience ever. Smooth service & premium feel.”</p>
+    <p class="mt-4 text-sm text-gray-500">— Demo Client</p>
+  </div>
+
+</section>
+
 <!-- CTA -->
 <section class="py-24 text-center border-t border-gray-800 fade">
 
@@ -183,6 +217,11 @@ body {
   </a>
 
 </section>
+
+<!-- FOOTER -->
+<footer class="py-6 text-center text-gray-600 text-sm border-t border-gray-800">
+  © 2026 Hair Style Zone • Demo by Webber
+</footer>
 
 <!-- SCRIPT -->
 <script>
